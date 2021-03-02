@@ -1,0 +1,25 @@
+ap-south-1
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+https://learn.hashicorp.com/tutorials/terraform/aws-build
+https://medium.com/@kumargaurav1247/introduction-to-terraform-ec2-instance-creation-using-terraform-ec221ec630d7
+http://guides.beanstalkapp.com/version-control/common-git-commands.html    --Git
+
+Access Key ID:
+AKIAIC26DKTHL7UT6W5Q
+Secret Access Key:
+CdZeOR1oROo5azWcJtNzsiPXuHcmBybr/TYFjsmn
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "ap-south-1"
+  access_key = "AKIAIC26DKTHL7UT6W5Q"
+  secret_key = "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"
+}
+resource "aws_instance" "myimage" {
+  ami           = "ami-0b84c6433cdbe5c3e"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "delhiimage"
+  }
+}
