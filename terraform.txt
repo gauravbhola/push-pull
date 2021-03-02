@@ -6,12 +6,6 @@ https://medium.com/@kumargaurav1247/introduction-to-terraform-ec2-instance-creat
 http://guides.beanstalkapp.com/version-control/common-git-commands.html    --Git
 
 
-# Configure the AWS Provider
-provider "aws" {
-  region = "ap-south-1"
-  access_key = ""
-  secret_key = ""
-}
 resource "aws_instance" "myimage" {
   ami           = "ami-0b84c6433cdbe5c3e"
   instance_type = "t2.micro"
