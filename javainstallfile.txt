@@ -1,0 +1,20 @@
+sudo apt update
+sudo apt install openjdk-8-jdk maven
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+systemctl status jenkins
+curl IP:8080  -check internally
+check with public IP:8080
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+mvn --version
+java -version
+MAVEN_HOME=/usr/share/maven
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+logoin with jenkins user and go to jenkins directory ssh-keygen
+/var/lib/jenkins/.ssh/id_rsa
+/var/lib/jenkins/.ssh/id_rsa.pub
+eval `ssh-agent`
+ssh-add /var/lib/jenkins/.ssh/id_rsa
+ssh -T git@github.com

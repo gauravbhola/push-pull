@@ -1,0 +1,25 @@
+sudo apt-get update
+sudo apt install openjdk-8-jdk maven
+vi /etc/environment
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+echo $JAVA_HOME  /usr/lib/jvm/java-8-openjdk-amd64
+sudo apt-get install vim wget curl unzip elinks git -y
+http://tomcat.apache.org/
+sudo wget https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomcat-8.5.66.tar.gz
+sudo tar xvzf apache-tomcat-8.5.66.tar.gz
+enter into bin directory :  /apache-tomcat-8.5.66/bin#
+./startup.sh
+Tomcat started
+ps -aux | grep tomcat  (to check the tomacat process )
+edit in below in context.xml file add this in allow column   |.*>
+webapps/host-manager/META-INF/context.xml
+webapps/manager/META-INF/context.xml
+add the below roldes in this file at end :  conf/tomcat-users.xml  
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<role rolename="admin-gui"/>
+<role rolename="admin-script"/>
+<user username="tomcat" password="s3cret" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
+check as well tomcat user name and password in this file
